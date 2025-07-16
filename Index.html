@@ -1,0 +1,2436 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Профессиональная диагностика и ремонт автомобилей в вашем городе.Мы предлагаем полный спектр услуг, от компьютерной диагностики до ремонта тормозной системы, чтобы ваш автомобиль всегда был в идеальном состоянии.">
+    <title>Adim Service - Профессиональный автосервис в Гродно</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #000;
+            --secondary-color: #333;
+            --accent-color: #6a0dad;
+            --white: #ffffff;
+            --light-gray: #f8f8f8;
+            --dark-gray: #222;
+            --transition: all 0.4s ease;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--secondary-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Навигационная панель */
+        .navbar {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+            margin-right: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+        .nav-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: var(--accent-color);
+            left: 0;
+            bottom: -5px;
+            transition: var(--transition);
+            border-radius: 50px;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+         /* Герой секция */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-top: 60px;
+            overflow: hidden;
+        }
+
+        .hero-slider {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide:nth-child(1) {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://cdn.gamma.app/yybg917w2argwxq/generated-images/WqnncMXJmIhDqpMP8t9uZ.png');
+        }
+
+        .slide:nth-child(2) {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://cdn.gamma.app/yybg917w2argwxq/generated-images/Cz6DXnoXyEEOtj9PeGMo8.png');
+        }
+
+        .slide:nth-child(3) {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://cdn.gamma.app/yybg917w2argwxq/generated-images/f_xgfE7TbxpssZHya3hf5.jpg');
+        }
+
+        .hero-content {
+            max-width: 600px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--secondary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-accent {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .btn-accent:hover {
+            color: var(--accent-color);
+        }
+
+        /* Секция услуг */
+        .services {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 100px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            text-align: center;
+            padding: 40px 30px;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 0.6s forwards;
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.3s; }
+        .service-card:nth-child(3) { animation-delay: 0.5s; }
+        .service-card:nth-child(4) { animation-delay: 0.7s; }
+
+        .service-icon {
+            font-size: 50px;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .service-card p {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        /* О нас */
+        .about {
+            padding: 100px 0;
+            background-color: var(--light-gray);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: fadeInRight 0.8s forwards;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateX(30px);
+            animation: fadeInLeft 0.8s forwards;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Контакты */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info {
+            animation: fadeInLeft 0.8s forwards;
+            opacity: 0;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .contact-icon {
+            margin-right: 15px;
+            color: var(--accent-color);
+            font-size: 20px;
+        }
+
+        .contact-form {
+            animation: fadeInRight 0.8s forwards;
+            opacity: 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Футер */
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 60px 0 20px;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            bottom: 0;
+            left: 0;
+            border-radius: 50px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        /* Улучшенные модальные окна */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: var(--white);
+            width: 90%;
+            max-width: 900px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            transform: translateY(50px);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 25px 30px;
+            position: relative;
+        }
+
+        .modal-header h3 {
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .modal-header .icon {
+            font-size: 28px;
+            color: var(--accent-color);
+        }
+
+        .modal-body {
+            padding: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .modal-image {
+            flex: 1;
+            min-width: 300px;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .modal-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .modal-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .modal-text h4 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .modal-text h4::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--accent-color);
+            bottom: 0;
+            left: 0;
+            border-radius: 50px;
+        }
+
+        .modal-text p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .features {
+            margin: 25px 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+
+        .feature-item:hover {
+            background: rgba(0,0,0,0.03);
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--light-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            color: var(--accent-color);
+            font-size: 18px;
+        }
+
+        .feature-text h5 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .modal-footer {
+            padding: 20px 30px;
+            background: var(--light-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .modal-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .modal-price span {
+            color: var(--accent-color);
+            font-size: 1.8rem;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--white);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border: none;
+            z-index: 10;
+        }
+
+        .modal-close:hover {
+            background: var(--accent-color);
+            color: var(--white);
+            transform: rotate(90deg);
+        }
+
+        /* Окно отзывов */
+        .reviews-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .review-form {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            background: var(--light-gray);
+            border-radius: 8px;
+        }
+
+        .review-form h4 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .stars {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+
+        .star {
+            font-size: 24px;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .star.active {
+            color: #ffc107;
+        }
+
+        .review-list {
+            flex: 1;
+            min-width: 500px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .review-item {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--accent-color);
+            position: relative;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .review-author {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .review-date {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+        }
+
+        .review-stars {
+            color: #ffc107;
+            margin: 10px 0;
+        }
+
+        .review-text {
+            line-height: 1.6;
+        }
+
+        .no-reviews {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+
+        .delete-review {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: transparent;
+            border: none;
+            color: #ff6b6b;
+            cursor: pointer;
+            font-size: 16px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .delete-review:hover {
+            opacity: 1;
+        }
+
+        /* Чат для заявок */
+        .chat-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            max-height: 80vh;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            z-index: 2000;
+            flex-direction: column;
+            overflow: hidden;
+            transform: translate(-50%, -50%) translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .chat-modal.active {
+            display: flex;
+            transform: translate(-50%, -50%) translateY(0);
+            opacity: 1;
+        }
+
+        .chat-header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h3 {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .chat-close {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .chat-body {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-height: calc(80vh - 130px);
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            font-size: 14px;
+            position: relative;
+        }
+
+        .client-message {
+            background: var(--light-gray);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+
+        .admin-message {
+            background: var(--accent-color);
+            color: var(--white);
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message-time {
+            font-size: 10px;
+            opacity: 0.7;
+            text-align: right;
+            margin-top: 5px;
+        }
+
+        .chat-footer {
+            padding: 15px;
+            border-top: 1px solid #eee;
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        .send-btn, .file-btn {
+            background: var(--accent-color);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .file-btn {
+            background: var(--primary-color);
+        }
+
+        .send-btn:hover, .file-btn:hover {
+            background: #5a0a9d;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .chat-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--accent-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: transform 0.3s;
+            display: none;
+        }
+
+        .chat-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .image-preview {
+            max-width: 100%;
+            margin-top: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .image-preview img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Анимации */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Мобильная адаптивность */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+
+            .modal-body {
+                flex-direction: column;
+            }
+
+            .modal-image {
+                height: 250px;
+            }
+            
+            .chat-modal {
+                width: 80%;
+                max-height: 70vh;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                background: var(--white);
+                width: 100%;
+                height: calc(100vh - 70px);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: var(--transition);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .modal-content {
+                width: 95%;
+            }
+            
+            .reviews-container {
+                flex-direction: column;
+            }
+
+            .modal-close {
+                top: 10px;
+                right: 10px;
+                width: 30px;
+                height: 30px;
+                font-size: 16px;
+            }
+
+            .modal-header {
+                padding: 15px 20px;
+            }
+
+            .modal-header h3 {
+                font-size: 1.3rem;
+            }
+
+            .modal-body {
+                padding: 15px;
+            }
+            
+            /* Улучшения для мобильных модальных окон */
+            .modal-content {
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+            
+            .modal-body {
+                flex-direction: column;
+                padding: 10px;
+            }
+            
+            .modal-image {
+                width: 100%;
+                height: 200px;
+                min-width: auto;
+                margin-bottom: 20px;
+            }
+            
+            .modal-text {
+                width: 100%;
+                min-width: auto;
+            }
+            
+            .features {
+                margin: 15px 0;
+            }
+            
+            .feature-item {
+                padding: 8px;
+            }
+            
+            .modal-footer {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+            
+            .modal-footer .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .review-form, .review-list {
+                min-width: 100%;
+            }
+            
+            .review-list {
+                max-height: 300px;
+            }
+            
+            .review-item {
+                padding: 15px;
+            }
+            
+            .chat-modal {
+                width: calc(100% - 40px);
+                max-height: 70vh;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .chat-toggle {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+            }
+
+            .modal-header {
+                padding: 15px;
+            }
+
+            .modal-header h3 {
+                font-size: 1.2rem;
+            }
+
+            .modal-body {
+                padding: 15px;
+            }
+
+            .modal-footer {
+                padding: 15px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .modal-image {
+                height: 200px;
+            }
+            
+            .chat-modal {
+                width: calc(100% - 20px);
+                max-height: 80vh;
+            }
+            
+            .review-list {
+                min-width: 100%;
+            }
+        }
+
+        /* Новые стили для админ-панели */
+        .admin-panel {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .admin-panel.active {
+            display: block;
+        }
+        
+        .admin-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигационная панель -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Adim <span>Service</span></a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#contact">Контакты</a></li>
+                <li><a href="#" id="footer-reviews">Отзывы</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Герой секция -->
+    <section class="hero">
+        <div class="container">
+             <div class="hero-slider">
+            <div class="slide active"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+        </div>
+            <div class="hero-content">
+                <div>
+                    <h1>Профессиональный автосервис в Гродно</h1>
+                    <p>Полный спектр услуг по диагностике и ремонту автомобилей любой сложности. Гарантия качества и доступные цены.</p>
+                    <a href="#contact" class="btn">Записаться онлайн</a>
+                    <a href="#" class="btn btn-accent" id="hero-reviews-btn">Смотреть отзывы</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция услуг -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши услуги</h2>
+                <p>Качественное обслуживание для вашего автомобиля</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car-crash"></i>
+                    </div>
+                    <h3>Диагностика и ремонт подвески</h3>
+                    <p>Комплексная диагностика ходовой части, замена амортизаторов, шаровых опор, сайлентблоков и других элементов подвески.</p>
+                    <a href="#" class="btn service-details" data-service="suspension">Подробнее</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Компьютерная диагностика</h3>
+                    <p>Точное определение неисправностей электронных систем автомобиля с помощью профессионального оборудования.</p>
+                    <a href="#" class="btn service-details" data-service="diagnostic">Подробнее</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Техническое обслуживание</h3>
+                    <p>Плановое ТО, замена масла, фильтров, свечей зажигания и других расходных материалов по регламенту производителя.</p>
+                    <a href="#" class="btn service-details" data-service="maintenance">Подробнее</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-stop-circle"></i>
+                    </div>
+                    <h3>Ремонт тормозной системы</h3>
+                    <p>Диагностика, замена колодок, дисков, барабанов, тормозных трубок и шлангов, прокачка тормозной системы.</p>
+                    <a href="#" class="btn service-details" data-service="brakes">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- О нас -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>О компании Adim Service</h2>
+                    <p>Adim Service - это современный автосервис. За годы работы мы заслужили репутацию надежного и профессионального сервиса, который заботится о своих клиентах.</p>
+                    <p>Мы используем только оригинальные запчасти и современное диагностическое оборудование, что гарантирует долговечность ремонта и безопасность вашего автомобиля.</p>
+                    <a href="#" class="btn about-more">Узнать больше</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://cdn.gamma.app/yybg917w2argwxq/generated-images/pqV0ujn8wjT08T2RK9omh.jpg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Контакты</h2>
+                <p>Свяжитесь с нами для записи на обслуживание</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Наши контактные данные</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Адрес</h4>
+                                <p>г. Гродно, ул. Суворова 109</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Телефон</h4>
+                                <p>-</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>-</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4>Часы работы</h4>
+                                <p>Пн-Пт: 9:00 - 18:00</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Записаться на обслуживание</h3>
+                    <form id="service-form">
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" placeholder="Иван Иванов" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" placeholder="+375 (99) 999-99-99" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="car">Марка автомобиля</label>
+                            <input type="text" id="car" placeholder="BMW M5 G99 Tuning" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Услуга</label>
+                            <select id="service" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 4px;">
+                                <option value="">Выберите услугу</option>
+                                <option value="suspension">Диагностика подвески</option>
+                                <option value="diagnostic">Компьютерная диагностика</option>
+                                <option value="maintenance">Техническое обслуживание</option>
+                                <option value="brakes">Ремонт тормозной системы</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">Отправить заявку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Adim Service</h4>
+                    <p>Профессиональный автосервис в Гродно с полным спектром услуг по диагностике и ремонту автомобилей.</p>
+                    
+                </div>
+                <div class="footer-col">
+                    <h4>Услуги</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-service" data-service="suspension">Диагностика подвески</a></li>
+                        <li><a href="#" class="footer-service" data-service="diagnostic">Компьютерная диагностика</a></li>
+                        <li><a href="#" class="footer-service" data-service="maintenance">Техническое обслуживание</a></li>
+                        <li><a href="#" class="footer-service" data-service="brakes">Ремонт тормозной системы</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Полезные ссылки</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="about-more">О компании</a></li>
+                        
+                        <li><a href="#" id="footer-reviews">Отзывы</a></li>
+                       
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Гродно, ул. Суворова 109</li>
+                        <li><i class="fas fa-phone-alt"></i> -</li>
+                        <li><i class="fas fa-envelope"></i> -</li>
+                        <li><i class="fas fa-clock"></i> Пн-Пт: 9:00-18:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Adim Service. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальные окна для услуг -->
+    <div class="modal" id="suspension-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-car-crash icon"></i> Диагностика и ремонт подвески</h3>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="Диагностика подвески">
+                </div>
+                <div class="modal-text">
+                    <p>Наша команда специалистов проводит комплексную диагностику ходовой части вашего автомобиля с использованием современного оборудования. Мы выявляем любые неисправности и предлагаем оптимальные решения по ремонту.</p>
+                    
+                    <div class="features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h5>Полная диагностика</h5>
+                                <p>Тщательная проверка всех элементов подвески на специальном стенде</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h5>Ремонт любой сложности</h5>
+                                <p>Замена амортизаторов, шаровых опор, сайлентблоков и других элементов</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <p>Мы используем только качественные запчасти от проверенных поставщиков, что гарантирует долгий срок службы и безопасность на дороге. После ремонта вы получите гарантию на все выполненные работы.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                
+                <a href="#contact" class="btn modal-record-btn">Записаться</a>
+            </div>
+            <button class="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="modal" id="diagnostic-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-laptop icon"></i> Компьютерная диагностика</h3>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="https://images.unsplash.com/photo-1545665277-5937489579f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="Компьютерная диагностика">
+                </div>
+                <div class="modal-text">
+                    <p>Профессиональная компьютерная диагностика позволяет точно определить неисправности в электронных системах вашего автомобиля. Наши специалисты используют современное диагностическое оборудование для выявления проблем на ранней стадии.</p>
+                    
+                    <div class="features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h5>Сканирование ошибок</h5>
+                                <p>Чтение и расшифровка кодов ошибок электронных систем</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h5>Анализ параметров</h5>
+                                <p>Проверка работы двигателя, трансмиссии и систем безопасности</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h5>Подробный отчет</h5>
+                                <p>Предоставление полной информации о состоянии автомобиля</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p>Своевременная диагностика помогает предотвратить серьезные поломки и снижает расходы на ремонт. Мы работаем со всеми марками автомобилей и используем профессиональное оборудование.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                
+                <a href="#contact" class="btn modal-record-btn">Записаться</a>
+            </div>
+            <button class="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="modal" id="maintenance-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-tools icon"></i> Техническое обслуживание</h3>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="Техническое обслуживание">
+                </div>
+                <div class="modal-text">
+                    <p>Регулярное техническое обслуживание - залог долгой и бесперебойной работы вашего автомобиля. Мы выполняем все виды ТО в соответствии с рекомендациями производителя.</p>
+                    
+                    <div class="features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-oil-can"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h5>Замена масла и фильтров</h5>
+                                <p>Использование качественных масел и оригинальных фильтров</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-car-battery"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h5>Диагностика систем</h5>
+                                <p>Проверка тормозной системы, электрики и других важных узлов</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-car-side"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h5>Комплексное ТО</h5>
+                                <p>Полный спектр работ согласно регламенту производителя</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4>Что входит в ТО</h4>
+                    <p>Наше техническое обслуживание включает замену всех расходных материалов, диагностику основных систем автомобиля, проверку уровня технических жидкостей и регулировку важных узлов. Мы используем только оригинальные запчасти и масла, рекомендованные производителем.</p>
+                    <p>После проведения ТО вы получите подробный отчет о состоянии вашего автомобиля и рекомендации по дальнейшей эксплуатации.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+               
+                <a href="#contact" class="btn modal-record-btn">Записаться</a>
+            </div>
+            <button class="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="modal" id="brakes-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-stop-circle icon"></i> Ремонт тормозной системы</h3>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="Ремонт тормозов">
+                </div>
+                <div class="modal-text">
+                    <p>Тормозная система - важнейший элемент безопасности вашего автомобиля. Наши специалисты проводят полную диагностику и ремонт всех компонентов тормозной системы.</p>
+                    
+                    <div class="features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h5>Диагностика тормозов</h5>
+                                <p>Точное определение износа и неисправностей тормозной системы</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h5>Замена компонентов</h5>
+                                <p>Колодки, диски, барабаны, суппорты, тормозные шланги</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-wrench"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h5>Прокачка системы</h5>
+                                <p>Удаление воздуха из тормозной системы и замена жидкости</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4>Наши преимущества</h4>
+                    <p>Мы используем только качественные комплектующие от проверенных производителей. Все работы выполняются на профессиональном оборудовании с соблюдением технологических норм. После ремонта мы проводим тестовый заезд для проверки эффективности тормозной системы.</p>
+                    <p>Безопасность - наш приоритет, поэтому мы уделяем особое внимание качеству работ с тормозной системой.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                
+                <a href="#contact" class="btn modal-record-btn">Записаться</a>
+            </div>
+            <button class="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- О компании -->
+    <div class="modal" id="about-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-info-circle icon"></i> О компании Adim Service</h3>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="О компании">
+                </div>
+                <div class="modal-text">
+                    <p>Adim Service - это современный автосервис. За годы работы мы заслужили репутацию надежного и профессионального сервиса, который заботится о своих клиентах.</p>
+                    
+                    <div class="features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h5>Наша команда</h5>
+                                <p>Опытные мастера большим стажем работы</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h5>Оборудование</h5>
+                                <p>Современное диагностическое и ремонтное оборудование</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <h4>Наши принципы работы</h4>
+                    <p>Мы придерживаемся строгих стандартов качества и прозрачности в работе с клиентами. Каждый автомобиль проходит тщательную диагностику перед началом работ, и мы всегда согласовываем с клиентом все этапы ремонта и стоимость.</p>
+                    <p>Наш сервисный центр оснащен по последнему слову техники, что позволяет нам выполнять работы быстро и качественно. Мы ценим каждого клиента и предлагаем индивидуальный подход к решению любых проблем с вашим автомобилем.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                
+                <a href="#contact" class="btn modal-record-btn">Связаться с нами</a>
+            </div>
+            <button class="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Модальное окно отзывов -->
+    <div class="modal" id="reviews-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-star icon"></i> Отзывы наших клиентов</h3>
+            </div>
+            <div class="modal-body">
+                <div class="admin-panel" id="admin-panel">
+                    <h4>Панель администратора</h4>
+                    <div class="admin-actions">
+                        <button id="admin-login-btn" class="btn">Войти как администратор</button>
+                        <button id="admin-logout-btn" class="btn" style="display: none;">Выйти</button>
+                    </div>
+                </div>
+                
+                <div class="reviews-container">
+                    <div class="review-form">
+                        <h4>Оставьте ваш отзыв</h4>
+                        <div class="form-group">
+                            <label for="review-name">Ваше имя</label>
+                            <input type="text" id="review-name" placeholder="Иван Иванов">
+                        </div>
+                        <div class="form-group">
+                            <label>Оценка</label>
+                            <div class="stars">
+                                <span class="star" data-rating="1"><i class="far fa-star"></i></span>
+                                <span class="star" data-rating="2"><i class="far fa-star"></i></span>
+                                <span class="star" data-rating="3"><i class="far fa-star"></i></span>
+                                <span class="star" data-rating="4"><i class="far fa-star"></i></span>
+                                <span class="star" data-rating="5"><i class="far fa-star"></i></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="review-text">Ваш отзыв</label>
+                            <textarea id="review-text" placeholder="Расскажите о вашем опыте"></textarea>
+                        </div>
+                        <button class="btn" id="submit-review">Отправить отзыв</button>
+                    </div>
+                    <div class="review-list" id="review-list">
+                        <!-- Отзывы будут загружены сюда -->
+                    </div>
+                </div>
+            </div>
+            <button class="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Чат для заявок -->
+    <div class="chat-modal" id="chat-modal">
+        <div class="chat-header">
+            <h3>Чат по заявке</h3>
+            <button class="chat-close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <!-- Сообщения будут здесь -->
+        </div>
+        <div class="chat-footer">
+            <input type="file" id="file-input" class="file-input" accept="image/*">
+            <button class="file-btn" id="file-btn"><i class="fas fa-paperclip"></i></button>
+            <input type="text" class="chat-input" id="chat-input" placeholder="Напишите сообщение...">
+            <button class="send-btn" id="send-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Иконка чата -->
+    <div class="chat-toggle" id="chat-toggle">
+        <i class="fas fa-comments"></i>
+        <div class="notification-badge" id="notification-badge" style="display: none;">0</div>
+    </div>
+
+    <script>
+        // Мобильное меню
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Плавная прокрутка
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Анимация при прокрутке
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.service-card, .about-text, .about-image, .contact-info, .contact-form');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if(elementPosition < screenPosition) {
+                    element.style.animationPlayState = 'running';
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Слайдер в герой-секции
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        // Автоматическая смена слайдов
+        setInterval(nextSlide, 5000);
+
+        // Модальные окна для услуг
+        const serviceButtons = document.querySelectorAll('.service-details, .footer-service');
+        const modals = document.querySelectorAll('.modal');
+        const closeButtons = document.querySelectorAll('.modal-close');
+        const aboutButtons = document.querySelectorAll('.about-more');
+        const reviewsButtons = document.querySelectorAll('#reviews-btn, #hero-reviews-btn, #footer-reviews');
+        
+        serviceButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const serviceId = button.getAttribute('data-service');
+                const modal = document.getElementById(`${serviceId}-modal`);
+                
+                if (modal) {
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+        
+        aboutButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const modal = document.getElementById('about-modal');
+                
+                if (modal) {
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+        
+        reviewsButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const modal = document.getElementById('reviews-modal');
+                
+                if (modal) {
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+        
+        closeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                modals.forEach(modal => modal.classList.remove('active'));
+                document.body.style.overflow = 'auto';
+            });
+        });
+        
+        // Закрытие модального окна при клике вне его
+        modals.forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+        
+        // Закрытие по клавише Esc
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                modals.forEach(modal => modal.classList.remove('active'));
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Система отзывов
+        const stars = document.querySelectorAll('.star');
+        let currentRating = 0;
+        
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                const rating = parseInt(star.getAttribute('data-rating'));
+                currentRating = rating;
+                
+                stars.forEach((s, index) => {
+                    if (index < rating) {
+                        s.innerHTML = '<i class="fas fa-star"></i>';
+                        s.classList.add('active');
+                    } else {
+                        s.innerHTML = '<i class="far fa-star"></i>';
+                        s.classList.remove('active');
+                    }
+                });
+            });
+            
+            star.addEventListener('mouseover', () => {
+                const rating = parseInt(star.getAttribute('data-rating'));
+                
+                stars.forEach((s, index) => {
+                    if (index < rating) {
+                        s.innerHTML = '<i class="fas fa-star"></i>';
+                    } else {
+                        s.innerHTML = '<i class="far fa-star"></i>';
+                    }
+                });
+            });
+            
+            star.addEventListener('mouseout', () => {
+                stars.forEach((s, index) => {
+                    if (index < currentRating) {
+                        s.innerHTML = '<i class="fas fa-star"></i>';
+                    } else {
+                        s.innerHTML = '<i class="far fa-star"></i>';
+                    }
+                });
+            });
+        });
+        
+        // Сохранение отзывов в localStorage
+        function saveReviews(reviews) {
+            localStorage.setItem('adimServiceReviews', JSON.stringify(reviews));
+        }
+        
+        function loadReviews() {
+            const reviews = localStorage.getItem('adimServiceReviews');
+            return reviews ? JSON.parse(reviews) : [];
+        }
+        
+        // Генерация уникального ID для отзыва
+        function generateReviewId() {
+            return Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
+        }
+        
+        // Проверка администратора
+        function isAdmin() {
+            return localStorage.getItem('isAdmin') === 'true';
+        }
+        
+        // Проверка авторства
+        function isAuthor(reviewId) {
+            const userReviews = JSON.parse(localStorage.getItem('userReviews')) || [];
+            return userReviews.includes(reviewId);
+        }
+        
+        // Отображение отзывов
+        function displayReviews() {
+            const reviews = loadReviews();
+            const reviewList = document.getElementById('review-list');
+            
+            if (reviews.length === 0) {
+                reviewList.innerHTML = `
+                    <div class="no-reviews">
+                        <i class="fas fa-comment-alt" style="font-size: 48px; margin-bottom: 15px; color: #ddd;"></i>
+                        <p>Пока нет отзывов. Будьте первым, кто оставит отзыв!</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            reviewList.innerHTML = '';
+            
+            reviews.forEach(review => {
+                let starsHtml = '';
+                for (let i = 0; i < 5; i++) {
+                    if (i < review.rating) {
+                        starsHtml += '<i class="fas fa-star"></i>';
+                    } else {
+                        starsHtml += '<i class="far fa-star"></i>';
+                    }
+                }
+                
+                const reviewItem = document.createElement('div');
+                reviewItem.className = 'review-item';
+                reviewItem.innerHTML = `
+                    <div class="review-header">
+                        <div class="review-author">${review.name}</div>
+                        <div class="review-date">${review.date}</div>
+                    </div>
+                    <div class="review-stars">${starsHtml}</div>
+                    <div class="review-text">${review.text}</div>
+                `;
+                
+                // Добавляем кнопку удаления для администратора или автора
+                if (isAdmin() || isAuthor(review.id)) {
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.className = 'delete-review';
+                    deleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
+                    deleteBtn.title = 'Удалить отзыв';
+                    deleteBtn.dataset.reviewId = review.id;
+                    reviewItem.appendChild(deleteBtn);
+                }
+                
+                reviewList.appendChild(reviewItem);
+            });
+        }
+        
+        // Отправка отзыва
+        document.getElementById('submit-review').addEventListener('click', () => {
+            const name = document.getElementById('review-name').value;
+            const text = document.getElementById('review-text').value;
+            
+            if (!name || !text || currentRating === 0) {
+                alert('Пожалуйста, заполните все поля и поставьте оценку');
+                return;
+            }
+            
+            const date = new Date();
+            const formattedDate = `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
+            const reviewId = generateReviewId();
+            
+            const newReview = {
+                id: reviewId,
+                name: name,
+                rating: currentRating,
+                text: text,
+                date: formattedDate
+            };
+            
+            // Сохраняем отзыв
+            const reviews = loadReviews();
+            reviews.push(newReview);
+            saveReviews(reviews);
+            
+            // Сохраняем ID отзыва для пользователя
+            const userReviews = JSON.parse(localStorage.getItem('userReviews')) || [];
+            userReviews.push(reviewId);
+            localStorage.setItem('userReviews', JSON.stringify(userReviews));
+            
+            // Обновляем отображение
+            displayReviews();
+            
+            // Очистка формы
+            document.getElementById('review-name').value = '';
+            document.getElementById('review-text').value = '';
+            stars.forEach(star => {
+                star.innerHTML = '<i class="far fa-star"></i>';
+                star.classList.remove('active');
+            });
+            currentRating = 0;
+            
+            alert('Спасибо за ваш отзыв!');
+        });
+        
+        // Удаление отзыва
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.delete-review')) {
+                const btn = e.target.closest('.delete-review');
+                const reviewId = btn.dataset.reviewId;
+                
+                if (isAdmin() || isAuthor(reviewId)) {
+                    if (confirm('Вы уверены, что хотите удалить этот отзыв?')) {
+                        // Удаляем отзыв
+                        let reviews = loadReviews();
+                        reviews = reviews.filter(review => review.id !== reviewId);
+                        saveReviews(reviews);
+                        
+                        // Удаляем ID из пользовательских отзывов
+                        if (!isAdmin()) {
+                            let userReviews = JSON.parse(localStorage.getItem('userReviews')) || [];
+                            userReviews = userReviews.filter(id => id !== reviewId);
+                            localStorage.setItem('userReviews', JSON.stringify(userReviews));
+                        }
+                        
+                        // Обновляем список
+                        displayReviews();
+                    }
+                } else {
+                    alert('У вас нет прав для удаления этого отзыва');
+                }
+            }
+        });
+        
+        // Административные функции
+        document.getElementById('admin-login-btn').addEventListener('click', () => {
+            const password = prompt('Введите пароль администратора:');
+            if (password === 'admin123') {
+                localStorage.setItem('isAdmin', 'true');
+                document.getElementById('admin-logout-btn').style.display = 'block';
+                document.getElementById('admin-login-btn').style.display = 'none';
+                displayReviews();
+                alert('Вы вошли как администратор');
+            } else {
+                alert('Неверный пароль');
+            }
+        });
+        
+        document.getElementById('admin-logout-btn').addEventListener('click', () => {
+            localStorage.removeItem('isAdmin');
+            document.getElementById('admin-logout-btn').style.display = 'none';
+            document.getElementById('admin-login-btn').style.display = 'block';
+            displayReviews();
+            alert('Вы вышли из режима администратора');
+        });
+        
+        // Проверяем статус администратора при загрузке
+        if (isAdmin()) {
+            document.getElementById('admin-logout-btn').style.display = 'block';
+            document.getElementById('admin-login-btn').style.display = 'none';
+        }
+        
+        // Инициализация отзывов при загрузке страницы
+        document.addEventListener('DOMContentLoaded', () => {
+            displayReviews();
+        });
+
+        // Система чата для заявок
+        const chatModal = document.getElementById('chat-modal');
+        const chatToggle = document.getElementById('chat-toggle');
+        const chatClose = document.querySelector('.chat-close');
+        const chatBody = document.getElementById('chat-body');
+        const chatInput = document.getElementById('chat-input');
+        const sendBtn = document.getElementById('send-btn');
+        const fileBtn = document.getElementById('file-btn');
+        const fileInput = document.getElementById('file-input');
+        const notificationBadge = document.getElementById('notification-badge');
+        let unreadMessages = 0;
+        let currentRequestId = null;
+        let chatMessages = [];
+
+        // Загрузка истории чата из localStorage
+        function loadChatHistory() {
+            const history = localStorage.getItem('adimServiceChat');
+            return history ? JSON.parse(history) : {};
+        }
+
+        // Сохранение истории чата в localStorage
+        function saveChatHistory(history) {
+            localStorage.setItem('adimServiceChat', JSON.stringify(history));
+        }
+
+        // Создание новой заявки
+        function createNewRequest(formData) {
+            const requestId = 'request_' + Date.now();
+            const request = {
+                id: requestId,
+                name: formData.name,
+                phone: formData.phone,
+                car: formData.car,
+                service: formData.service,
+                status: 'new',
+                messages: [],
+                created: new Date().toISOString()
+            };
+            
+            const history = loadChatHistory();
+            history[requestId] = request;
+            saveChatHistory(history);
+            
+            return requestId;
+        }
+
+        // Отображение сообщений в чате
+        function displayChatMessages(requestId) {
+            const history = loadChatHistory();
+            const request = history[requestId];
+            
+            if (!request) return;
+            
+            chatBody.innerHTML = '';
+            chatMessages = request.messages;
+            
+            // Добавление системного сообщения о создании заявки
+            const systemMsg = document.createElement('div');
+            systemMsg.className = 'message client-message';
+            systemMsg.innerHTML = `
+                <div>Заявка создана: ${new Date(request.created).toLocaleString()}</div>
+                <div>Имя: ${request.name}</div>
+                <div>Телефон: ${request.phone}</div>
+                <div>Автомобиль: ${request.car}</div>
+                <div>Услуга: ${request.service}</div>
+            `;
+            chatBody.appendChild(systemMsg);
+            
+            // Добавление сообщений
+            chatMessages.forEach(msg => {
+                addMessageToChat(msg);
+            });
+            
+            // Сброс счетчика непрочитанных
+            unreadMessages = 0;
+            updateNotificationBadge();
+        }
+
+        // Добавление сообщения в чат
+        function addMessageToChat(message) {
+            const messageEl = document.createElement('div');
+            messageEl.className = `message ${message.sender === 'client' ? 'client-message' : 'admin-message'}`;
+            
+            let content = `<div>${message.text}</div>`;
+            if (message.image) {
+                content += `<div class="image-preview"><img src="${message.image}" alt="Прикрепленное изображение"></div>`;
+            }
+            
+            content += `<div class="message-time">${new Date(message.timestamp).toLocaleTimeString()}</div>`;
+            
+            messageEl.innerHTML = content;
+            chatBody.appendChild(messageEl);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        // Отправка сообщения
+        function sendMessage() {
+            const text = chatInput.value.trim();
+            if (!text && !fileInput.files[0]) return;
+            
+            const message = {
+                text: text || '',
+                sender: 'client',
+                timestamp: new Date().toISOString(),
+                image: null
+            };
+            
+            // Обработка изображения
+            if (fileInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    message.image = e.target.result;
+                    saveMessageToHistory(message);
+                    addMessageToChat(message);
+                    resetInputs();
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            } else {
+                saveMessageToHistory(message);
+                addMessageToChat(message);
+                resetInputs();
+            }
+        }
+
+        // Сохранение сообщения в истории
+        function saveMessageToHistory(message) {
+            const history = loadChatHistory();
+            if (history[currentRequestId]) {
+                history[currentRequestId].messages.push(message);
+                saveChatHistory(history);
+            }
+        }
+
+        // Сброс полей ввода
+        function resetInputs() {
+            chatInput.value = '';
+            fileInput.value = '';
+        }
+
+        // Обновление бейджа уведомлений
+        function updateNotificationBadge() {
+            if (unreadMessages > 0) {
+                notificationBadge.textContent = unreadMessages;
+                notificationBadge.style.display = 'flex';
+            } else {
+                notificationBadge.style.display = 'none';
+            }
+        }
+
+        // Отправка заявки (форма контактов)
+        document.getElementById('service-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                car: document.getElementById('car').value,
+                service: document.getElementById('service').value
+            };
+            
+            // Создаем новую заявку
+            currentRequestId = createNewRequest(formData);
+            
+            // Открываем чат
+            displayChatMessages(currentRequestId);
+            chatModal.classList.add('active');
+            
+            // Показываем иконку чата
+            chatToggle.style.display = 'flex';
+            
+            // Оповещаем администратора (эмуляция)
+            setTimeout(() => {
+                const history = loadChatHistory();
+                if (history[currentRequestId]) {
+                    history[currentRequestId].messages.push({
+                        text: 'Здравствуйте! Ваша заявка принята в обработку. В ближайшее время с вами свяжется наш специалист.',
+                        sender: 'admin',
+                        timestamp: new Date().toISOString()
+                    });
+                    saveChatHistory(history);
+                    
+                    // Обновление чата если он открыт
+                    if (chatModal.classList.contains('active')) {
+                        displayChatMessages(currentRequestId);
+                    } else {
+                        // Увеличиваем счетчик непрочитанных
+                        unreadMessages++;
+                        updateNotificationBadge();
+                    }
+                }
+            }, 3000);
+        });
+
+        // Управление чатом
+        chatToggle.addEventListener('click', () => {
+            if (currentRequestId) {
+                chatModal.classList.toggle('active');
+                if (chatModal.classList.contains('active')) {
+                    displayChatMessages(currentRequestId);
+                    unreadMessages = 0;
+                    updateNotificationBadge();
+                }
+            }
+        });
+
+        chatClose.addEventListener('click', () => {
+            chatModal.classList.remove('active');
+        });
+
+        sendBtn.addEventListener('click', sendMessage);
+
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        fileBtn.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files[0]) {
+                sendMessage();
+            }
+        });
+
+        // Инициализация чата
+        document.addEventListener('DOMContentLoaded', () => {
+            const history = loadChatHistory();
+            const requestIds = Object.keys(history);
+            
+            if (requestIds.length > 0) {
+                currentRequestId = requestIds[requestIds.length - 1];
+                chatToggle.style.display = 'flex';
+                
+                // Проверка непрочитанных сообщений
+                const lastRequest = history[currentRequestId];
+                lastRequest.messages.forEach(msg => {
+                    if (msg.sender === 'admin' && !msg.read) {
+                        unreadMessages++;
+                    }
+                });
+                updateNotificationBadge();
+            }
+        });
+
+        // Добавленный функционал для кнопок записи
+        document.querySelectorAll('.modal-record-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Закрываем все модальные окна
+                document.querySelectorAll('.modal').forEach(modal => {
+                    modal.classList.remove('active');
+                });
+                document.body.style.overflow = 'auto';
+                
+                // Плавный скролл к форме
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    window.scrollTo({
+                        top: contactSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
